@@ -50,7 +50,7 @@ Windows example (Test EfficientNet-B4):
 - Display the result (segmentation, scaling, rotation)
 
 **Stage 3:** Identification (ANN EfficientNet-B4):
-- resize [512, 512] -> [380, 380]
-- transform image [380, 380] into tensor [1, 3, 380, 380] and feed it to ANN input
-- transform data received from ANN into probabilities for each of the two classes [Avers, Revers]
-- display result
+- Image resizing [512, 512] -> [380, 380]
+- Transform image [380, 380] into tensor [1, 3, 380, 380] and feed it to ANN input
+- Transform data received from ANN into probabilities for each of the two classes [Avers, Revers]
+- Display result
