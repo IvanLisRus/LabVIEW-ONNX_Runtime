@@ -15,7 +15,7 @@ Windows example (Test EfficientNet-B4):
 ![FP_Linux](https://github.com/IvanLisRus/LabVIEW-ONNX_Runtime/blob/main/img_LabVIEW/FP_win.png)
 ![BD_Linux](https://github.com/IvanLisRus/LabVIEW-ONNX_Runtime/blob/main/img_LabVIEW/BD_win.png)
 
-#Логика работы следующая:
+# Логика работы следующая:
 
 **1 этап** детекция (ИНС YOLOv8n):
 - преобразование изображения [1024, 1024] в тензор [1, 3, 1024, 1024] и подача его на вход ИНС
@@ -35,4 +35,22 @@ Windows example (Test EfficientNet-B4):
 - преобразование полученных от ИНС данных в вероятности для каждого из двух классов [Avers, Revers]
 - отображение результата
 
+# Logic:
 
+**Stage 1:** Detection (YOLOv8n ANN):
+- Convert the [1024, 1024] image to a [1, 3, 1024, 1024] tensor and feed it to the ANN input
+- Convert the data received from the ANN to a readable form, filter by threshold and NMS
+- Display the detection result
+
+**Stage 2:** Rotation angle compensation (homemade ANN):
+- Image segmentation (based on the results of stage 1)
+- Image resizing [x, x] -> [512, 512]
+- Convert the [512, 512] image to a [1, 3, 512, 512] tensor and feed it to the ANN input
+- Convert the [sin, cos] data received from the ANN to an angle and compensate for it
+- Display the result (segmentation, scaling, rotation)
+
+**Stage 3:** Identification (ANN EfficientNet-B4):
+- resize [512, 512] -> [380, 380]
+- transform image [380, 380] into tensor [1, 3, 380, 380] and feed it to ANN input
+- transform data received from ANN into probabilities for each of the two classes [Avers, Revers]
+- display result
