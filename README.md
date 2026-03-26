@@ -1,7 +1,7 @@
-**LabVIEW 2017 + ONNX Runtime** (x64-1.24.3)
+# LabVIEW 2017 + ONNX Runtime (x64-1.24.3)
 + YOLOv8n for for coin detection
 + custom neural network for predicting rotation angle
-+ EfficientNet-B4 for for coin classification
++ EfficientNet-B4 for coin classification
 
 Tested:
 - Ubuntu 24.04lts - 64bit
@@ -15,7 +15,7 @@ Windows example (Test EfficientNet-B4):
 ![FP_Linux](https://github.com/IvanLisRus/LabVIEW-ONNX_Runtime/blob/main/img_LabVIEW/FP_win.png)
 ![BD_Linux](https://github.com/IvanLisRus/LabVIEW-ONNX_Runtime/blob/main/img_LabVIEW/BD_win.png)
 
-**Логика работы следующая:**
+#Логика работы следующая:
 
 **1 этап** детекция (ИНС YOLOv8n):
 - преобразование изображения [1024, 1024] в тензор [1, 3, 1024, 1024] и подача его на вход ИНС
