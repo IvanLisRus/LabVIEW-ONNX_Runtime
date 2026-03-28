@@ -1,5 +1,9 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
 <Library LVVersion="17008000">
+	<Property Name="NI.Lib.Description" Type="Str">Created IvanLis by LabVIEW Portal
+Profile: http://labviewportal.org/memberlist.php?mode=viewprofile&amp;u=987
+eMail: IvanLisanov@gMail.com
+Telegram: https://t.me/IvanLis</Property>
 	<Property Name="NI.Lib.HelpPath" Type="Str"></Property>
 	<Property Name="NI.Lib.Icon" Type="Bin">&amp;Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!)P!!!*Q(C=\&gt;8"&lt;2J"&amp;-&lt;RD]A(8THE(N(#;Y%7;/'VQ.8B2!O@5E'W"6JY,&gt;!#5CIA`RU`,-N/D#X:3A\?]=0QT=\-D^X2)IXD6LL2_&gt;LR^=8DF@V`0?P6`5W:8U9^[X`7`N2`'8^_-P\*IG`_@C`U8THU?8Q?``;YO\J*0XT0,D1`C+CC4#56GJ=[&amp;XG2&amp;XG2&amp;XG2G^TE*D?ZS5W?Z%G?Z%G?Z%E?Z%%?Z%%?Z%%_'LH)23ZS3-8CR5,&amp;J-5%R=F16,Q5HM*4?!I0(V6Y#E`B+4S&amp;BV.5?!J0Y3E]B9&gt;B+DS&amp;J`!5HM,$6%.3IZ(D+4R-,_-R(O-R(O.B32G0!:D&amp;T-2G%BASH?;.]2C0]@"7RG-]RG-]RE/XD-&gt;YD-&gt;YD)=BY[JY;/:'DI&gt;JF(A34_**0)G(K:6Y%E`C34S*B_75?"*0AEA74#;(I'21=E,S)@%E(PYJ]33?R*.Y%A^&gt;YQ\FO$+T:G\E?!*0Y!E]A3@Q-)5#4_!*0)%H]$#N!E`A#4S"*`#QF!*0Y!E]!329F/564"9-$%Y+AM$$X^AN-?[3BS2'EXLTKD?F?L/J.Z&amp;[=[BPOPJGKG_3_O+L,[L[9KEPAPL,K&gt;&amp;KD(I2^?$Z2*VY06)(;K,WV*&lt;;5'NK23XHI?^]YOFUUP&amp;YV/&amp;QU$2.WO`XWG[XWGQW7K`87KV77C[8$Y_"&lt;\3("],^=_G/^X0N,P8,C^UU@&gt;`^`%&amp;_O\DU@^"P[8`Q&lt;.180:[8;`1&lt;6=VBEA!!!!!</Property>
 	<Property Name="NI.Lib.LocalName" Type="Str">Image Library</Property>

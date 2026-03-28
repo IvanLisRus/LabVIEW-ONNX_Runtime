@@ -1,5 +1,9 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
 <Library LVVersion="17008000">
+	<Property Name="NI.Lib.Description" Type="Str">Created IvanLis by LabVIEW Portal
+Profile: http://labviewportal.org/memberlist.php?mode=viewprofile&amp;u=987
+eMail: IvanLisanov@gMail.com
+Telegram: https://t.me/IvanLis</Property>
 	<Property Name="NI.Lib.HelpPath" Type="Str"></Property>
 	<Property Name="NI.Lib.Icon" Type="Bin">&amp;Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!)W!!!*Q(C=\&gt;7R41-R&amp;-&lt;R$U2"GQV1/I3IXAKJ[&amp;/QQ#N9)#X8:97X1D;)-A(37S%L:)8D&lt;_@J"")1*%"1Y)O0SW?@`9P0/K2?,K5,D;@+^M0S[@:WU4^V'F_X(^.R/LX&gt;0P89DNMXW^]&gt;`^4]8`Z^\\;@+0IP`_6XS_0*4@LD?`:-\56%47J1H7JK5YV*HO2*HO2*HO2"(O2"(O2"(O2/\O2/\O2/\O2'&lt;O2'&lt;O2'&lt;O4^)"?ZS%5/+:E]G3A:."EA[1R&amp;S3HR**\%EXDYKM34?"*0YEE]&gt;&amp;(C34S**`%E(GZ4YEE]C3@R*"['[J,M"TG?R-0Q#DS"*`!%HM$$F!I]!3#9,"AY'!3'AM&lt;A)P!%HM$$J1*0Y!E]A3@QU+T!%XA#4_!*0.T36S7[JBXE?"B'DM@R/"\(YXA97I\(]4A?R_.YG%[/R`%Y#'&gt;#:X!)=GZS/DB@()`DY9]=D_.R0)\(]&gt;$5HZ$XF7G;&gt;J$D-4S'R`!9(M0$%$)]BM@Q'"\$Q\!S0)&lt;(]"A?Q].5-DS'R`!9%'.3JJ=RG('DU=E)$!_@PFOM0[8I%OO(6*N8N3F6GUWVC63&lt;1`8161^4^:"5C[^;6.6CK2:"^?.5;"6'.9HKZN:2"]Z\[I[[I;[J+_K3OK$/K&lt;.W[T&gt;X0"Q/WO`XWOVWWGQW7K`87KV77C[87CQ7GM`HGMVGUWPACG.[)2T@3Y^=^`JU.QSX$].Q=X]W8.].\@P52PWB`[6`Y.WI=\U=FT6["D"9%'Q!!!!!</Property>
 	<Property Name="NI.Lib.LocalName" Type="Str">libonnx_wrapper Library</Property>
@@ -39,12 +43,13 @@
 		<Item Name="GetMetadataValue.vi" Type="VI" URL="../Metadata/GetMetadataValue.vi"/>
 	</Item>
 	<Item Name="Session" Type="Folder">
+		<Property Name="NI.SortType" Type="Int">3</Property>
 		<Item Name="CreateSession.vi" Type="VI" URL="../Session/CreateSession.vi"/>
-		<Item Name="DestroyAllSessions.vi" Type="VI" URL="../Session/DestroyAllSessions.vi"/>
 		<Item Name="DestroySession.vi" Type="VI" URL="../Session/DestroySession.vi"/>
 		<Item Name="IsSessionLoaded.vi" Type="VI" URL="../Session/IsSessionLoaded.vi"/>
 		<Item Name="ReloadSession.vi" Type="VI" URL="../Session/ReloadSession.vi"/>
 		<Item Name="UnloadSession.vi" Type="VI" URL="../Session/UnloadSession.vi"/>
+		<Item Name="DestroyAllSessions.vi" Type="VI" URL="../Session/DestroyAllSessions.vi"/>
 	</Item>
 	<Item Name="SubVI" Type="Folder">
 		<Item Name="wrapper_path.vi" Type="VI" URL="../SubVI/wrapper_path.vi"/>

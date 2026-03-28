@@ -1,5 +1,9 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
 <Library LVVersion="17008000">
+	<Property Name="NI.Lib.Description" Type="Str">Created IvanLis by LabVIEW Portal
+Profile: http://labviewportal.org/memberlist.php?mode=viewprofile&amp;u=987
+eMail: IvanLisanov@gMail.com
+Telegram: https://t.me/IvanLis</Property>
 	<Property Name="NI.Lib.HelpPath" Type="Str"></Property>
 	<Property Name="NI.Lib.Icon" Type="Bin">&amp;Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!*%!!!*Q(C=\&gt;5`4BN2%-@R(SA&amp;L7_!8&gt;(0&amp;8Q"#P=2R6T"H57Z[6*!-6@Q&amp;8S"&amp;+0=Q&amp;@Q&amp;:&lt;P?]S329JC*)+3AFX'L(`PXY@&gt;JU8KRZ8U2?/Z9`@(YSXNYW[=,O9DRHH\V'UX&gt;:O_`MJG\?0OV7S`&lt;8]^`HGB=:QH&lt;`7`L`X-I=`D]`CXR`X:4@LB?`:#\56%*2755[;WV*DE3:\E3:\E32\E12\E12\E1?\E4O\E4O\E4G\E2G\E2G\E2NZ0=J',8/31EM74B:**EQG3TF#5@#3?R*.Y%A^@F8A34_**0)G(,EI]C3@R**\%QT!FHM34?"*0YG'K,MF_EO.*0%SPQ".Y!E`A#4QMK=!4!),&amp;AIG$37!I;!QO!E`A#4R=+P!%HM!4?!)0T1I]A3@Q"*\!QZ"_6[*LWEG/BWHE?"S0YX%]DI?JZ8A=D_.R0)[(Z?2Y()_$=":U*I=A:Z$4Q@HC?"Q0P_2Y()`D=4S/B[&lt;_B,T@G;:J*TE?QW.Y$)`B-4R-)=.D?!S0Y4%]4#P$9XA-D_%R0#QFQW.Y$)]"-2:F?2G4'1/.4E:A?0DJO]8[5YIOM8Z+N8F6GV+VW63&lt;3,5Z6!^&gt;^4"6$UFV]V5X687T6$&gt;"^=?JU#K-;B(6Y.:2*T[0V)(;5Q/VJ4&lt;5GFJ2CT&lt;U,X=]H5Y[(I][(!\;\`=;BE(&lt;\6;&lt;T5&lt;L^6KLV5K,R?,F.8$._@*#?(YPX80&gt;[O((V_8DT@@&lt;&lt;T?03_JW_(GXH.J;@&gt;$`UP`AX;B,T?@F(DU"NYP7OQ!!!!!</Property>
 	<Property Name="NI.Lib.LocalName" Type="Str">process_YOLOv8  Library</Property>
