@@ -19,7 +19,10 @@ Ubuntu example (Test YOLO):
 Windows example (Test EfficientNet-B4):
 ![FP_Linux](https://github.com/IvanLisRus/LabVIEW-ONNX_Runtime/blob/main/img_LabVIEW/FP_win.png)
 ![BD_Linux](https://github.com/IvanLisRus/LabVIEW-ONNX_Runtime/blob/main/img_LabVIEW/BD_win.png)
-
+ Version using Classes:
+![BD_Class_YOLO](https://github.com/IvanLisRus/LabVIEW-ONNX_Runtime/blob/main/img_LabVIEW/BD_Class_YOLO.png)
+![BD_Class_EfficientNet](https://github.com/IvanLisRus/LabVIEW-ONNX_Runtime/blob/main/img_LabVIEW/BD_Class_EfficientNet.png)
+ 
 # Логика работы следующая:
 
 **1 этап** детекция (ИНС YOLOv8n):

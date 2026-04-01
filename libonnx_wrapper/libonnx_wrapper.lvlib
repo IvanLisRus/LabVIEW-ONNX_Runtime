@@ -59,21 +59,8 @@ Telegram: https://t.me/IvanLis</Property>
 		<Item Name="Introspection.ctl" Type="VI" URL="../TypeDef/Introspection.ctl"/>
 		<Item Name="Shape.ctl" Type="VI" URL="../TypeDef/Shape.ctl"/>
 	</Item>
-	<Item Name="unix64" Type="Folder">
-		<Item Name="libonnx_wrapper.so" Type="Document" URL="../unix64/libonnx_wrapper.so"/>
-		<Item Name="libonnxruntime.so" Type="Document" URL="../unix64/libonnxruntime.so"/>
-		<Item Name="libonnxruntime.so.1" Type="Document" URL="../unix64/libonnxruntime.so.1"/>
-		<Item Name="libonnxruntime.so.1.24.3" Type="Document" URL="../unix64/libonnxruntime.so.1.24.3"/>
-		<Item Name="libonnxruntime_providers_shared.so" Type="Document" URL="../unix64/libonnxruntime_providers_shared.so"/>
-	</Item>
-	<Item Name="win64" Type="Folder">
-		<Item Name="libonnx_wrapper.dll" Type="Document" URL="../win64/libonnx_wrapper.dll"/>
-		<Item Name="onnxruntime.dll" Type="Document" URL="../win64/onnxruntime.dll"/>
-		<Item Name="onnxruntime_providers_shared.dll" Type="Document" URL="../win64/onnxruntime_providers_shared.dll"/>
-	</Item>
 	<Item Name="Get Metadata.vi" Type="VI" URL="../Get Metadata.vi"/>
 	<Item Name="Introspection Input.vi" Type="VI" URL="../Introspection Input.vi"/>
 	<Item Name="Introspection Output.vi" Type="VI" URL="../Introspection Output.vi"/>
 	<Item Name="RunInference.vi" Type="VI" URL="../RunInference.vi"/>
-	<Item Name="wrapper.h" Type="Document" URL="../wrapper.h"/>
 </Library>
