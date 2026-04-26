@@ -1,11 +1,9 @@
 // wrapper.cpp
 // ONNX Runtime Wrapper for LabVIEW (Linux/Windows) под ONNX Runtime 1.24+
 //
-// Компиляция Linux:
-// g++ -shared -fPIC -o libonnx_wrapper.so wrapper.cpp -I./include -L./lib -lonnxruntime -Wl,-rpath,'$ORIGIN' -std=c++17
-//
 // Компиляция Windows (MinGW-w64 из Linux):
-// x86_64-w64-mingw32-g++ -shared -o onnx_wrapper.dll wrapper.cpp -I./include -L./lib -l:onnxruntime.dll -static-libgcc -static-libstdc++ -std=c++17
+// x86_64-w64-mingw32-g++ -shared -o libonnx_wrapper.dll wrapper.cpp -I./include -L./lib -l:onnxruntime.dll -static-libgcc -static-libstdc++ -std=c++17
+
 
 #include <onnxruntime_cxx_api.h>
 #include <iostream>
@@ -457,6 +455,154 @@ EXPORT_FUNCTION int RunInference(int sessionId, int inputIndex, float* inputBuff
     }
 }
 
+EXPORT_FUNCTION   int RunInferenceAllOutputs(int sessionId, int inputIndex, float * inputBuffer, int inputSize,
+    int outputCount, float * outputBuffer, int outputBufferSize,
+    int * outputSizes) {
+    std::lock_guard < std::mutex > lock(sessionMutex);
+
+    if (sessions.find(sessionId) == sessions.end()) {
+      return -1;
+    }
+
+    SessionData & data = sessions[sessionId];
+
+    if (!data.session) {
+      return -1;
+    }
+
+    if (inputIndex >= (int) data.inputs.names.size()) {
+      return -1;
+    }
+
+    if (outputCount <= 0 || outputCount > (int) data.outputs.names.size()) {
+      SetSessionError(data, "Invalid outputCount");
+      return -1;
+    }
+
+    try {
+      // === Обработка динамической размерности (batch) ===
+      std::vector < int64_t > shape = data.inputs.shapes[inputIndex];
+      size_t known_dims_product = 1;
+      int unknown_dim_index = -1;
+      int unknown_count = 0;
+
+      for (size_t i = 0; i < shape.size(); i++) {
+        if (shape[i] == -1) {
+          unknown_dim_index = (int) i;
+          unknown_count++;
+        } else if (shape[i] > 0) {
+          known_dims_product *= shape[i];
+        }
+      }
+
+      if (unknown_count == 1 && unknown_dim_index >= 0 && known_dims_product > 0) {
+        if (inputSize % known_dims_product != 0) {
+          SetSessionError(data, "Input size does not match expected shape dimensions");
+          return -1;
+        }
+        shape[unknown_dim_index] = inputSize / known_dims_product;
+      } else if (unknown_count > 1) {
+        SetSessionError(data, "Multiple dynamic dimensions (-1) in shape are not supported");
+        return -1;
+      } else if (unknown_count == 0) {
+        size_t expected_size = known_dims_product;
+        if ((size_t) inputSize != expected_size) {
+          char error_msg[256];
+          snprintf(error_msg, sizeof(error_msg),
+            "Input size mismatch: expected %zu, got %d",
+            expected_size, inputSize);
+          SetSessionError(data, error_msg);
+          return -1;
+        }
+      }
+
+      // === Создание входного тензора ===
+      auto memoryInfo = Ort::MemoryInfo::CreateCpu(OrtArenaAllocator, OrtMemTypeDefault);
+
+      Ort::Value inputTensor = Ort::Value::CreateTensor < float > (
+        memoryInfo,
+        inputBuffer,
+        inputSize,
+        shape.data(),
+        shape.size()
+      );
+
+      // === Сбор имён ВСЕХ выходов ===
+      std::vector <
+        const char * > outputNamesArr(outputCount);
+      for (int i = 0; i < outputCount; i++) {
+        outputNamesArr[i] = data.outputs.names[i];
+      }
+
+      // === ОДИН запуск модели для всех выходов ===
+      const char * inputNamesArr[] = {
+        data.inputs.names[inputIndex]
+      };
+
+      auto outputTensors = data.session -> Run(
+        Ort::RunOptions {
+          nullptr
+        },
+        inputNamesArr, &
+        inputTensor,
+        1,
+        outputNamesArr.data(),
+        outputCount
+      );
+
+      // === Упаковка всех выходов в единый буфер ===
+      int currentOffset = 0;
+      int totalElements = 0;
+
+      for (int i = 0; i < outputCount; i++) {
+        auto info = outputTensors[i].GetTensorTypeAndShapeInfo();
+        size_t elemCount = info.GetElementCount();
+        int elemCountInt = (int) elemCount;
+
+        // Проверяем тип данных (должен быть FLOAT32)
+        if (outputTensors[i].GetTensorTypeAndShapeInfo().GetElementType() != ONNX_TENSOR_ELEMENT_DATA_TYPE_FLOAT) {
+          SetSessionError(data, "Output tensor is not FLOAT32");
+          return -1;
+        }
+
+        // Записываем размер этого выхода
+        if (outputSizes) {
+          outputSizes[i] = elemCountInt;
+        }
+
+        // Проверяем, хватает ли места в буфере
+        if (currentOffset + elemCountInt > outputBufferSize) {
+          char error_msg[256];
+          snprintf(error_msg, sizeof(error_msg),
+            "Output buffer too small: need %d, have %d",
+            currentOffset + elemCountInt, outputBufferSize);
+          SetSessionError(data, error_msg);
+          return -1;
+        }
+
+        // Копируем данные в единый буфер
+        const float * srcData = outputTensors[i].GetTensorData < float > ();
+        memcpy(outputBuffer + currentOffset, srcData, elemCountInt * sizeof(float));
+
+        currentOffset += elemCountInt;
+        totalElements += elemCountInt;
+      }
+
+      return 0;
+
+    } catch (const Ort::Exception & e) {
+      SetSessionError(data, e.what());
+      return -1;
+    } catch (const std::exception & e) {
+      SetSessionError(data, e.what());
+      return -1;
+    } catch (...) {
+      SetSessionError(data, "Unknown error in RunInferenceAllOutputs");
+      return -1;
+    }
+  }
+  
+  
 // === МЕТАДАННЫЕ ===
 EXPORT_FUNCTION int GetMetadataCount(int sessionId) {
     std::lock_guard<std::mutex> lock(sessionMutex);

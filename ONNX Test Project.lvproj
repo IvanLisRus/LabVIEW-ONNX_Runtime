@@ -54,9 +54,11 @@ Telegram: https://t.me/IvanLis</Property>
 		<Item Name="process_Angle.lvlib" Type="Library" URL="../process_Angle/process_Angle.lvlib"/>
 		<Item Name="process_EfficientNet_B4.lvlib" Type="Library" URL="../process_EfficientNet_B4/process_EfficientNet_B4.lvlib"/>
 		<Item Name="process_YOLOv8.lvlib" Type="Library" URL="../process_YOLOv8/process_YOLOv8.lvlib"/>
-		<Item Name="Test Class YOLO.vi" Type="VI" URL="../Test Class YOLO.vi"/>
-		<Item Name="Test EfficientNet_B4.vi" Type="VI" URL="../Test EfficientNet_B4.vi"/>
 		<Item Name="Test YOLO.vi" Type="VI" URL="../Test YOLO.vi"/>
+		<Item Name="Test YOLO (All Output).vi" Type="VI" URL="../Test YOLO (All Output).vi"/>
+		<Item Name="Test Class YOLO.vi" Type="VI" URL="../Test Class YOLO.vi"/>
+		<Item Name="Test Class YOLO (All Output).vi" Type="VI" URL="../Test Class YOLO (All Output).vi"/>
+		<Item Name="Test EfficientNet_B4.vi" Type="VI" URL="../Test EfficientNet_B4.vi"/>
 		<Item Name="Test Class EfficientNet_B4.vi" Type="VI" URL="../Test Class EfficientNet_B4.vi"/>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>

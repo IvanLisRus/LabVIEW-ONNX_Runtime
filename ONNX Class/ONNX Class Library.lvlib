@@ -55,11 +55,12 @@ Telegram: https://t.me/IvanLis</Property>
 		<Item Name="Introspection Input.vi" Type="VI" URL="../SubVI/Introspection Input.vi"/>
 		<Item Name="Introspection Output.vi" Type="VI" URL="../SubVI/Introspection Output.vi"/>
 		<Item Name="RunInference.vi" Type="VI" URL="../SubVI/RunInference.vi"/>
+		<Item Name="RunInferenceAllOutput.vi" Type="VI" URL="../SubVI/RunInferenceAllOutput.vi"/>
 		<Item Name="wrapper_path.vi" Type="VI" URL="../SubVI/wrapper_path.vi"/>
 	</Item>
 	<Item Name="TypeDef" Type="Folder">
-		<Item Name="IO.ctl" Type="VI" URL="../TypeDef/IO.ctl"/>
 		<Item Name="Introspection.ctl" Type="VI" URL="../TypeDef/Introspection.ctl"/>
+		<Item Name="IO.ctl" Type="VI" URL="../TypeDef/IO.ctl"/>
 		<Item Name="Shape.ctl" Type="VI" URL="../TypeDef/Shape.ctl"/>
 	</Item>
 	<Item Name="ONNX Class.lvclass" Type="LVClass" URL="../ONNX Class.lvclass"/>

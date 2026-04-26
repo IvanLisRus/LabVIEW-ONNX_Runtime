@@ -392,6 +392,34 @@ int RunInference(int sessionId, int inputIndex, float* inputBuffer, int inputSiz
                  int outputIndex, float* outputBuffer, int outputSize);
 
 
+/**
+@brief Выполнить инференс ОДИН раз и упаковать ВСЕ выходы в единый буфер
+Оптимизировано для моделей с множеством выходов (YOLO, SCRFD, детекторы).
+@param sessionId [IN] ID сессии
+@param inputIndex [IN] Индекс входа (обычно 0)
+@param inputBuffer [IN] Входные данные
+@param inputSize [IN] Количество элементов во входе
+@param outputCount [IN] Количество выходов (получите через GetOutputCount)
+@param outputBuffer [OUT] Единый буфер для всех выходов (рассчитайте сумму элементов)
+@param outputBufferSize [IN] Размер outputBuffer в элементах float
+@param outputSizes [OUT] Массив размеров каждого выхода (выделите под GetOutputCount)
+@return int32: 0 при успехе, -1 при ошибке
+@note Функция выполняет модель ОДИН раз и последовательно записывает все выходы в outputBuffer
+@note outputSizes заполняется размерами каждого выхода (в элементах float)
+@note Смещения вычисляются как накопленная сумма outputSizes (первый выход начинается с 0)
+@example
+int outCount = GetOutputCount(sessionId);
+int sizes[9];
+float outputBuffer[252000];
+RunInferenceAllOutputs(sessionId, 0, inputBuffer, inputSize, outCount, outputBuffer, 252000, sizes);
+// Выход 0: offset=0, length=sizes[0]
+// Выход 1: offset=sizes[0], length=sizes[1]
+// Выход 2: offset=sizes[0]+sizes[1], length=sizes[2]
+*/
+int RunInferenceAllOutputs(int sessionId, int inputIndex, float* inputBuffer, int inputSize,
+                           int outputCount, float* outputBuffer, int outputBufferSize,
+                           int* outputSizes);
+
 /* ============================================================================
  * МЕТАДАННЫЕ МОДЕЛИ
  * ============================================================================ */

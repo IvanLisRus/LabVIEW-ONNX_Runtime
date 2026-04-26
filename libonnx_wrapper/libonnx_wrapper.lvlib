@@ -55,12 +55,13 @@ Telegram: https://t.me/IvanLis</Property>
 		<Item Name="wrapper_path.vi" Type="VI" URL="../SubVI/wrapper_path.vi"/>
 	</Item>
 	<Item Name="TypeDef" Type="Folder">
-		<Item Name="IO.ctl" Type="VI" URL="../TypeDef/IO.ctl"/>
 		<Item Name="Introspection.ctl" Type="VI" URL="../TypeDef/Introspection.ctl"/>
+		<Item Name="IO.ctl" Type="VI" URL="../TypeDef/IO.ctl"/>
 		<Item Name="Shape.ctl" Type="VI" URL="../TypeDef/Shape.ctl"/>
 	</Item>
 	<Item Name="Get Metadata.vi" Type="VI" URL="../Get Metadata.vi"/>
 	<Item Name="Introspection Input.vi" Type="VI" URL="../Introspection Input.vi"/>
 	<Item Name="Introspection Output.vi" Type="VI" URL="../Introspection Output.vi"/>
 	<Item Name="RunInference.vi" Type="VI" URL="../RunInference.vi"/>
+	<Item Name="RunInferenceAllOutput.vi" Type="VI" URL="../RunInferenceAllOutput.vi"/>
 </Library>
