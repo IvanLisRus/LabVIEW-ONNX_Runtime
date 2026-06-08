@@ -65,5 +65,6 @@ Telegram: https://t.me/IvanLis</Property>
 	<Item Name="Introspection Output.vi" Type="VI" URL="../Introspection Output.vi"/>
 	<Item Name="RunInference.vi" Type="VI" URL="../RunInference.vi"/>
 	<Item Name="RunInference_I64.vi" Type="VI" URL="../RunInference_I64.vi"/>
+	<Item Name="RunInference_U64.vi" Type="VI" URL="../RunInference_U64.vi"/>
 	<Item Name="RunInferenceAllOutput.vi" Type="VI" URL="../RunInferenceAllOutput.vi"/>
 </Library>

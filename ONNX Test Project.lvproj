@@ -21,6 +21,7 @@ Telegram: https://t.me/IvanLis</Property>
 			<Item Name="ar.onnx" Type="Document" URL="../ONNX model/ar.onnx"/>
 			<Item Name="coin_angle_detection.onnx" Type="Document" URL="../ONNX model/coin_angle_detection.onnx"/>
 			<Item Name="coins_detection.onnx" Type="Document" URL="../ONNX model/coins_detection.onnx"/>
+			<Item Name="Xiaolei Hu model.onnx" Type="Document" URL="../ONNX model/Xiaolei Hu model.onnx"/>
 		</Item>
 		<Item Name="onnx_wrapper" Type="Folder">
 			<Item Name="libonnx_code" Type="Folder">
@@ -60,6 +61,7 @@ Telegram: https://t.me/IvanLis</Property>
 		<Item Name="Test Class YOLO (All Output).vi" Type="VI" URL="../Test Class YOLO (All Output).vi"/>
 		<Item Name="Test EfficientNet_B4.vi" Type="VI" URL="../Test EfficientNet_B4.vi"/>
 		<Item Name="Test Class EfficientNet_B4.vi" Type="VI" URL="../Test Class EfficientNet_B4.vi"/>
+		<Item Name="Test Xiaolei Hu.vi" Type="VI" URL="../Test Xiaolei Hu.vi"/>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
