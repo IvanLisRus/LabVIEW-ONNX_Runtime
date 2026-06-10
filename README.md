@@ -65,7 +65,7 @@ Windows example (Test EfficientNet-B4):
 - Display result
 
 
-# Ubuntu example (Test YOLO):
+# New example:
 ![FP_Test_Xiaolei_Hu](https://github.com/IvanLisRus/LabVIEW-ONNX_Runtime/blob/main/img_LabVIEW/FP_Test_Xiaolei_Hu.png)
 ![BD_Test_Xiaolei_Hu](https://github.com/IvanLisRus/LabVIEW-ONNX_Runtime/blob/main/img_LabVIEW/BD_Test_Xiaolei_Hu.png)
 
