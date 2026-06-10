@@ -63,3 +63,11 @@ Windows example (Test EfficientNet-B4):
 - Transform image [380, 380] into tensor [1, 3, 380, 380] and feed it to ANN input
 - Transform data received from ANN into probabilities for each of the two classes [Avers, Revers]
 - Display result
+
+
+# Ubuntu example (Test YOLO):
+![FP_Test_Xiaolei_Hu](https://github.com/IvanLisRus/LabVIEW-ONNX_Runtime/blob/main/img_LabVIEW/FP_Test_Xiaolei_Hu.png)
+![BD_Test_Xiaolei_Hu](https://github.com/IvanLisRus/LabVIEW-ONNX_Runtime/blob/main/img_LabVIEW/BD_Test_Xiaolei_Hu.png)
+
+**en:** Thanks to user Xiaolei Hu, who found a bug in the code and shared an ONNX model example, we now have an example of reading multiple outputs (with dynamic dimensions) with different data types.
+**ru** Благодаря пользователю Xiaolei Hu, который обнаружил ошибку в коде и поделился примером модели ONNX, теперь есть пример чтения данных с нескольких выходов разных типов с динамической размерностью.
