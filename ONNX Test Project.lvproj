@@ -62,6 +62,7 @@ Telegram: https://t.me/IvanLis</Property>
 		<Item Name="Test EfficientNet_B4.vi" Type="VI" URL="../Test EfficientNet_B4.vi"/>
 		<Item Name="Test Class EfficientNet_B4.vi" Type="VI" URL="../Test Class EfficientNet_B4.vi"/>
 		<Item Name="Test Xiaolei Hu.vi" Type="VI" URL="../Test Xiaolei Hu.vi"/>
+		<Item Name="Test Xiaolei Hu_Several Frame.vi" Type="VI" URL="../Test Xiaolei Hu_Several Frame.vi"/>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>

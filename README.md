@@ -71,4 +71,4 @@ Windows example (Test EfficientNet-B4):
 
 **en:** Thanks to user Xiaolei Hu, who found a bug in the code and shared an ONNX model example, we now have an example of reading multiple outputs (with dynamic dimensions) with different data types.
 
-**ru** Благодаря пользователю Xiaolei Hu, который обнаружил ошибку в коде и поделился примером модели ONNX, теперь есть пример чтения данных с нескольких выходов разных типов с динамической размерностью.
+**ru:** Благодаря пользователю Xiaolei Hu, который обнаружил ошибку в коде и поделился примером модели ONNX, теперь есть пример чтения данных с нескольких выходов разных типов с динамической размерностью.
